@@ -89,5 +89,10 @@
     }
   },
   "nativeBytesUnchangedFrom": "v0.1.3",
-  "fidelityEvidence": "v0.1.3: both browsers passed 500 frames, 0x3C59; unchanged native binaries/ROM, not repeated for packaging-only v0.1.4"
+  "fidelityEvidence": "v0.1.3: both browsers passed 500 frames, 0x3C59; unchanged native binaries/ROM, not repeated for packaging-only v0.1.4",
+  "publishedAssets": [
+    "browser-game-player-examples-0.1.4.zip",
+    "wbniv-browser-game-player-0.1.4.tgz"
+  ],
+  "assetInventoryNote": "Original publication inventory retained for provenance. Latest release now lists only publishedAssets; source companions remain on v0.1.3."
 }

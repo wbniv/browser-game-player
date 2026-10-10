@@ -85,7 +85,6 @@ def main():
         shutil.copytree(a.licenses/kind,collection/'licenses'/kind)
         receipts.append({'adapter':kind,'bundle':receipt['bundleId'],'runtimeBytes':receipt['totalBytes']})
     archive(collection,a.output/(collection.name+'.zip'))
-    shutil.copyfile(a.snes_runtime/'roms/doom-fire.sfc',a.output/'doom-fire.sfc')
     write_json(a.output/'examples-receipt.json',{'playerVersion':version,'examples':receipts,'assets':{path.name:{'bytes':path.stat().st_size,'sha256':sha(path)} for path in sorted(a.output.iterdir()) if path.is_file()}})
     shutil.rmtree(work)
 if __name__=='__main__':main()

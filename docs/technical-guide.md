@@ -17,7 +17,7 @@ flowchart LR
   Assets --> Frame
 ```
 
-The distributable package includes these guides and text-only example configs/build tool. The combined runnable ZIP, raw ROM and source archives are separate release assets.
+The distributable package includes these guides and text-only example configs/build tool. The combined runnable examples ZIP is the player demonstration download. The current release lists only that ZIP and the component package.
 
 The site owns URL/history, game selection, release selection and fallback content. The host owns the frame and message listeners. The shell owns focused input, fullscreen/menu/retry/restart presentation and pause policy. Adapters translate lifecycle operations into existing runtime calls. Disposal removes the iframe; there is no claim of an in-process engine teardown API.
 
@@ -168,6 +168,6 @@ Astro ClientRouter requires its generated script activation to work under the si
 
 Run `npm test`, `npm run check` and `npm pack`. Install that tarball in consumers; build and run the built pages, not only development routes. `tests/README.md` documents optional real-browser checks using existing Playwright/browser installations. The release witnesses include real runtimes in Ubuntu 24.10, two-frame protocol/disposal checks, accepted FYW input, SNES fidelity, ROM touch navigation and three consumer builds.
 
-Use `examples/build-release.py --help` to reproduce the combined downloadable examples from existing pinned inputs. It copies the emulator and ROM, trims manifest entries, and repacks one WF preload without recompiling or changing its WASM. It records source hashes and writes ZIPs with deterministic timestamps. Companion source archives and licenses are separate release assets so players download only the runnable files.
+Use `examples/build-release.py --help` to reproduce the combined downloadable examples from existing pinned inputs. It copies the emulator and ROM, trims manifest entries, and repacks one WF preload without recompiling or changing its WASM. It records source hashes and writes ZIPs with deterministic timestamps. License/source notices remain inside the runnable ZIP. The unchanged native source snapshots remain available from the [v0.1.3 release](https://github.com/wbniv/browser-game-player/releases/tag/v0.1.3); they are not listed on the current player release page.
 
 Chromium/Firefox and emulated phone checks establish bounded functional coverage. They do not establish all-ROM fidelity, physical-phone/Apple compatibility or sustained performance. See the versioned verification reports for exact evidence.
