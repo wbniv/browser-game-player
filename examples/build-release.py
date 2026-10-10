@@ -70,6 +70,7 @@ def main():
         shutil.copyfile(root/'src/embed.mjs',demo/'embed.mjs')
         (demo/'index.html').write_text('<!doctype html><html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>'+config['title']+' — Browser Game Player</title><style>body{margin:0;background:#29261f;color:#eee;font:16px system-ui}h1,p{margin:16px}iframe{display:block;border:0;width:100%;min-height:400px}</style><h1>'+config['title']+'</h1><p>Press Play. Open the menu for controls. <a style="color:inherit" href="user-guide.md">Player guide</a></p><div id="game"></div><script type="module">import {mountPlayer} from "./embed.mjs";mountPlayer(document.querySelector("#game"),{src:"./bundles/'+bundle.name+'/frame.html",title:'+json.dumps(config['title'])+'});</script></html>')
         shutil.copyfile(root/'docs/user-guide.md',demo/'user-guide.md');shutil.copyfile(root/'LICENSE',demo/'PLAYER-LICENSE');shutil.copyfile(root/'NOTICE',demo/'PLAYER-NOTICE')
+        shutil.copytree(root/'docs/user-guide-assets',demo/'user-guide-assets')
         shutil.copytree(a.licenses/kind,demo/'licenses')
         (demo/'README.txt').write_text('Unzip, run python3 -m http.server 8000 --bind 127.0.0.1 here, then open http://localhost:8000/ and press Play.\nNo compiler or Node is required. Use HTTP, not file: URLs.\nSource and licenses: licenses/SOURCES.md and companion release source archives.\n')
         archive(demo,a.output/(demo.name+'.zip'));receipts.append({'adapter':kind,'bundle':receipt['bundleId'],'runtimeBytes':receipt['totalBytes']})

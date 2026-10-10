@@ -148,7 +148,8 @@ sequenceDiagram
   Site->>Host: setSource(next)
   Host->>Frame: navigate with new instanceId
   Site->>Host: destroy()
-  Host->>Frame: remove iframe; abort host listeners
+  Host->>Frame: remove iframe
+  Host->>Host: abort host listeners
 ```
 
 Messages use `{type:'browser-game-player', protocol:1, instanceId, command}` or `event`. The host checks sender window, exact origin, protocol and instance ID. Frame events are idle/loading/ready/running/paused/error or height; detail is an optional string up to 4000 characters. Height must be finite and between 200 and 2400 pixels. `player-state` contains `{state,instanceId,detail}`. These are observations, not a strict application-state machine: native callbacks can report ready before running. Frame navigation rejects stale identities.

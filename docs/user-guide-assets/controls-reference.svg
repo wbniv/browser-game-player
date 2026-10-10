@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">Player controls: World Foundry and SNES</title><desc id="desc">Both players put a plain circular joystick, fullscreen and menu on the left. World Foundry puts camera, close dialogue and select on the right. SNES puts Select, Start, shoulder and face buttons on the right.</desc>
+<style>text{font:17px system-ui,sans-serif;fill:#ede9da}.heading{font-weight:700;font-size:24px}.small{font-size:14px;fill:#cec7b3}.label{fill:#222;font-size:17px}.key{fill:#444;font-size:14px}.button{fill:#494536;stroke:#9d9272}.line{stroke:#807654;stroke-width:2;fill:none}</style>
+<rect width="1000" height="470" rx="18" fill="#faf8f1"/>
+<text x="24" y="36" class="heading" style="fill:#222">Control layout — illustrated reference</text>
+<text x="24" y="69" class="label">World Foundry</text><text x="220" y="69" class="key">Move with arrows / WASD · Select with Space · Camera with 2 · Close with 3</text>
+<rect x="20" y="88" width="960" height="108" rx="12" fill="#29261f"/>
+<circle cx="78" cy="142" r="43" class="button"/><circle cx="78" cy="142" r="15" fill="#87816c"/>
+<circle cx="151" cy="136" r="23" class="button"/><path d="M144 133v-5h5m4 0h5v5m0 7v5h-5m-4 0h-5v-5" stroke="#eee" fill="none" stroke-width="2"/>
+<circle cx="209" cy="136" r="23" class="button"/><text x="209" y="141" text-anchor="middle">···</text>
+<text x="151" y="180" class="small" text-anchor="middle">Fullscreen</text><text x="209" y="180" class="small" text-anchor="middle">Menu</text>
+<text x="285" y="148" class="small">Arrow keys move · Space selects</text>
+<circle cx="805" cy="136" r="23" class="button"/><g stroke="#eee" fill="none" stroke-width="1.7"><circle cx="796" cy="126" r="5"/><circle cx="808" cy="126" r="5"/><rect x="790" y="133" width="21" height="14" rx="2"/><path d="m811 136 8-4v15l-8-4m-13 4-4 5m12-5 4 5"/></g>
+<circle cx="864" cy="136" r="23" class="button"/><text x="864" y="143" text-anchor="middle" style="font-size:26px">×</text>
+<circle cx="936" cy="142" r="33" fill="#d5f000"/><circle cx="936" cy="142" r="10" fill="#29261f"/>
+<text x="805" y="180" class="small" text-anchor="middle">Camera</text><text x="864" y="180" class="small" text-anchor="middle">Close</text><text x="936" y="190" class="small" text-anchor="middle">Select</text>
+<path d="M78 196v18h-25" class="line"/><text x="26" y="241" class="label">Drag to move; release to stop</text>
+<path d="M209 196v18h105" class="line"/><text x="335" y="241" class="label">Menu pauses the game</text>
+<path d="M936 196v18h-35" class="line"/><text x="658" y="241" class="label">Primary action at the far right</text>
+<text x="24" y="288" class="label">SNES</text><text x="220" y="288" class="key">Same joystick and menu · Game-specific button meanings</text>
+<rect x="20" y="306" width="960" height="108" rx="12" fill="#29261f"/>
+<circle cx="78" cy="360" r="43" class="button"/><circle cx="78" cy="360" r="15" fill="#87816c"/>
+<circle cx="151" cy="354" r="23" class="button"/><path d="M144 351v-5h5m4 0h5v5m0 7v5h-5m-4 0h-5v-5" stroke="#eee" fill="none" stroke-width="2"/>
+<circle cx="209" cy="354" r="23" class="button"/><text x="209" y="359" text-anchor="middle">···</text>
+<text x="151" y="398" class="small" text-anchor="middle">Fullscreen</text><text x="209" y="398" class="small" text-anchor="middle">Menu</text>
+<circle cx="508" cy="360" r="23" class="button" /><text x="508" y="366" text-anchor="middle" >SE</text><text x="508" y="410" text-anchor="middle" class="small">Select</text><circle cx="566" cy="360" r="23" class="button" /><text x="566" y="366" text-anchor="middle" >ST</text><text x="566" y="410" text-anchor="middle" class="small">Start</text><circle cx="624" cy="360" r="23" class="button" /><text x="624" y="366" text-anchor="middle" >L</text><text x="624" y="410" text-anchor="middle" class="small">L</text><circle cx="682" cy="360" r="23" class="button" /><text x="682" y="366" text-anchor="middle" >R</text><text x="682" y="410" text-anchor="middle" class="small">R</text><circle cx="740" cy="360" r="23" class="button" /><text x="740" y="366" text-anchor="middle" >Y</text><text x="740" y="410" text-anchor="middle" class="small">Y</text><circle cx="798" cy="360" r="23" class="button" /><text x="798" y="366" text-anchor="middle" >X</text><text x="798" y="410" text-anchor="middle" class="small">X</text><circle cx="856" cy="360" r="23" class="button" /><text x="856" y="366" text-anchor="middle" >B</text><text x="856" y="410" text-anchor="middle" class="small">B</text><circle cx="936" cy="360" r="33" class="button" style="fill:#d5f000"/><text x="936" y="366" text-anchor="middle" style="fill:#222">A</text><text x="936" y="410" text-anchor="middle" class="small">A</text><text x="24" y="449" class="key">On narrow screens, controls wrap into rows. Keep one finger on the joystick and tap actions with another.</text></svg>
