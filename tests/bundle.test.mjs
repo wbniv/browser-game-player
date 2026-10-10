@@ -55,3 +55,26 @@ test('cannot silently relabel an existing immutable bundle provenance',t=>{
 test('level entries cannot override validated adapter or shell settings',()=>{
  assert.throws(()=>validateConfig({...baseConfig,defaultLevel:'game',levels:{game:{title:'Game',arguments:[],adapter:'snes'}}}),/level fields/);
 });
+test('play icons accept only distinct built-in ids',()=>{
+ for(const playIcons of [['temple'],['temple','controller','cube'],['cube','temple']]) assert.deepEqual(validateConfig({...baseConfig,playIcons}).playIcons,playIcons);
+ for(const playIcons of [[],'temple',['temple','temple'],['play'],['rocket'],['temple','controller','cube','temple'],[{}]]) assert.throws(()=>validateConfig({...baseConfig,playIcons}),/play icons/);
+});
+test('default frame keeps the plain Play button; configured frames add hidden icons',()=>{
+ const plain=renderFrame(baseConfig);assert(plain.includes('<button id="play">Play</button>'));assert(!plain.includes('play-icons'));
+ // Byte-identical to the 0.1.4 renderer's output for the same config.
+ assert.equal(sha256(plain),'5a625732882f634f39b6df6863d51c85a95a7146a830b85f0c1311f4bc51f9e2');
+ assert.equal(renderFrame({...baseConfig,adapter:'snes',game:'test',games:['test']}).includes('play-icons'),false);
+ const html=renderFrame({...baseConfig,playIcons:['temple','controller','cube']});
+ assert(!html.includes('<button id="play">Play</button>'));
+ const button=html.match(/<button id="play"[^>]*>.*?<\/button>/s)[0];
+ assert.match(button,/<span class="play-icons" aria-hidden="true" data-slots="6">/);assert.match(button,/<span class="play-label">Play<\/span>/);
+ assert.deepEqual([...button.matchAll(/data-icon="(\w+)"/g)].map(m=>m[1]),['play','temple','controller','cube']);
+ // Slots: play, temple 2-4 s, play, controller 6-8 s, play, cube 10-12 s of a 12 s cycle.
+ assert.deepEqual([...button.matchAll(/animation-delay:(-\d+)s/g)].map(m=>Number(m[1])),[-10,-6,-2]);
+ assert.equal((button.match(/data-static/g)||[]).length,1);assert.match(button,/data-icon="temple" viewBox="0 0 24 24" data-static/);
+});
+test('frozen bundles with play icons verify and differ from the default bundle',t=>{
+ const f=fixture(t);const plain=freezeBundle({runtimeDirectory:f.runtime,config:f.config,output:f.output});
+ const icons=freezeBundle({runtimeDirectory:f.runtime,config:{...f.config,playIcons:['temple']},output:f.output});
+ assert.notEqual(verifyBundle(plain).bundleId,verifyBundle(icons).bundleId);assert.match(readFileSync(join(icons,'frame.html'),'utf8'),/play-label/);
+});

@@ -1,5 +1,7 @@
 export const PROTOCOL = 1;
-export const PLAYER_VERSION = '0.1.4';
+export const PLAYER_VERSION = '0.1.5';
+// Built-in Play-button icons; a play triangle is interleaved before each one.
+export const PLAY_ICONS = ['temple', 'controller', 'cube'];
 const code = /^(Arrow(Up|Down|Left|Right)|Key[A-Z]|Space|Digit[0-9]|Numpad[0-9]|Numpad(Add|Subtract|Multiply|Divide|Decimal|Enter)|Enter|ShiftLeft|ShiftRight)$/;
 const text = (value, name, limit = 4000) => {
   if (typeof value !== 'string' || !value.trim() || value.length > limit) throw Error(`Invalid ${name}`);
@@ -33,6 +35,8 @@ export function validateConfig(input) {
     text(action.label, 'action label', 100); text(action.caption, 'action caption', 30);
   }
   if (config.motionCode != null && !code.test(config.motionCode)) throw Error('Invalid motion code');
+  if (config.playIcons != null && (!Array.isArray(config.playIcons) || !config.playIcons.length || config.playIcons.length > PLAY_ICONS.length
+    || !config.playIcons.every(id => PLAY_ICONS.includes(id)) || new Set(config.playIcons).size !== config.playIcons.length)) throw Error('Invalid play icons');
   if (config.adapter === 'snes' && (!/^[a-zA-Z0-9_-]+$/.test(config.game) || !Array.isArray(config.games) || !config.games.includes(config.game) || !config.games.every(id => /^[a-zA-Z0-9_-]+$/.test(id)))) throw Error('Invalid SNES game allowlist');
   if (config.verifyLabels != null) {
     if (config.adapter !== 'snes' || typeof config.verifyLabels !== 'object' || Array.isArray(config.verifyLabels)) throw Error('Invalid verification labels');

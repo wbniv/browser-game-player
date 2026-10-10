@@ -27,9 +27,25 @@ const stable = value => value && typeof value === 'object' && !Array.isArray(val
   : Array.isArray(value) ? '[' + value.map(stable).join(',') + ']' : JSON.stringify(value);
 const bundleId = files => 'bgp1-' + sha256(stable({protocol:PROTOCOL,playerVersion:PLAYER_VERSION,files})).slice(0, 24);
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
+const iconPaths = {
+  play: '<path d="m8 5 11 7-11 7Z"/>',
+  temple: '<path d="m2 8 10-6 10 6H2Zm2 3v7m5-7v7m6-7v7m5-7v7M2 21h20M3 18h18"/>',
+  controller: '<path d="M7 7h10c3 0 4 3 5 10 .4 3-2 4-4 2l-3-3H9l-3 3c-2 2-4.4 1-4-2C3 10 4 7 7 7Z"/><path d="M6 10v5m-2.5-2.5h5M16 11h.01M19 14h.01"/>',
+  cube: '<path d="m12 2 9 5v10l-9 5-9-5V7l9-5Zm0 10v10M3 7l9 5 9-5"/>',
+};
+// Two-second slots: play, ids[0], play, ids[1], ... The first id is the
+// static icon whenever motion is reduced (see player.css).
+function playButton(ids) {
+  const period = 4 * ids.length;
+  const svg = (id, extra = '') => `<svg class="icon-${id}" data-icon="${id}" viewBox="0 0 24 24"${extra}>${iconPaths[id]}</svg>`;
+  const icons = [svg('play'), ...ids.map((id, k) => svg(id, `${k ? '' : ' data-static'} style="animation-delay:-${period - 2 * (2 * k + 1)}s"`))];
+  return `<button id="play" class="with-icons"><span class="play-icons" aria-hidden="true" data-slots="${2 * ids.length}">${icons.join('')}</span><span class="play-label">Play</span></button>`;
+}
 export function renderFrame(config) {
   config = validateConfig(config);
-  return frameTemplate.replace('<!-- WF_PLAYER_CONFIG -->', `<script type="application/json" id="wf-player-config">${json(config)}</script>`);
+  let frame = frameTemplate.replace('<!-- WF_PLAYER_CONFIG -->', `<script type="application/json" id="wf-player-config">${json(config)}</script>`);
+  if (config.playIcons) frame = frame.replace('<button id="play">Play</button>', playButton(config.playIcons));
+  return frame;
 }
 function inventory(directory, names) {
   return Object.fromEntries([...names].sort().map(name => {

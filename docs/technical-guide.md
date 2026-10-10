@@ -113,6 +113,7 @@ player.destroy();
 | `help` | One to twenty nonempty paragraphs. |
 | `actions` | One to twelve `{code,label,caption}` controls. Caption is at most 30 characters. |
 | `motionCode` | Optional supported key code; only use if the game implements reduced motion. |
+| `playIcons` | Optional array of one to three distinct built-in icon ids (`temple`, `controller`, `cube`). Shows an `aria-hidden` icon before the Play label that cycles in two-second slots: play triangle, first id, play triangle, second id, and so on. The first id is shown statically under `prefers-reduced-motion: reduce`, after the in-game reduced-motion toggle (mirrored as `data-reduced-motion="true"` on the frame's `<html>`), and while loading. Absent: the plain Play button, byte-identical to 0.1.4. |
 | WF `levels`, `defaultLevel` | Optional slug-to-`{title,arguments}` table and declared default. Overrides cannot alter adapter/shell settings. |
 | SNES `game`, `games` | Required selected ROM ID and allowlist containing it. |
 | SNES `previews` | Optional subset of allowed ROM IDs with corresponding PNGs. |

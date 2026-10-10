@@ -47,6 +47,12 @@ import { createAdapter as snes } from './adapters/snes.js';
   var stage = document.getElementById('stage');
   var overlay = document.getElementById('overlay');
   var play = document.getElementById('play');
+  // With config.playIcons the label is a child span beside aria-hidden icons.
+  var playLabel = play.querySelector('.play-label') || play;
+  // The game does not report its reduced-motion state, so mirror each toggle
+  // the shell sends (menu item or a fresh motionCode key press) on <html>.
+  var motionReduced = false;
+  function toggleMotion() { motionReduced = !motionReduced; document.documentElement.setAttribute('data-reduced-motion',String(motionReduced)); }
   var status = document.getElementById('status');
   var progress = document.getElementById('progress');
   var focus = document.getElementById('focus');
@@ -102,7 +108,7 @@ import { createAdapter as snes } from './adapters/snes.js';
   function error(message, detail) {
     if (failed) return; failed = true; loading = false; pause(true); notify('error',message);
     overlay.hidden = false; status.textContent = message; progress.hidden = true;
-    play.disabled = false; play.textContent = 'Retry'; focus.disabled = true;
+    play.disabled = false; playLabel.textContent = 'Retry'; focus.disabled = true;
     if (detail) console.error('Browser game player:', detail);
   }
   window.addEventListener('keydown', function (e) {
@@ -117,6 +123,7 @@ import { createAdapter as snes } from './adapters/snes.js';
     if (!mapped.test(e.code)) return;
     if (!started || failed || document.activeElement !== canvas) { e.stopImmediatePropagation(); return; }
     var already = held(e.code); physical.add(e.code); feedback(); audio();
+    if (e.code === config.motionCode && !already && !e.repeat) toggleMotion();
     e.preventDefault(); if (already && !e.repeat) e.stopImmediatePropagation();
   }, true);
   window.addEventListener('keyup', function (e) {
@@ -183,7 +190,7 @@ import { createAdapter as snes } from './adapters/snes.js';
     var help = document.getElementById('help'); help.hidden = !help.hidden; this.setAttribute('aria-expanded',String(!help.hidden));
   });
   document.getElementById('motion').addEventListener('click',function () {
-    closeMenu(); pulse(config.motionCode);
+    closeMenu(); pulse(config.motionCode); toggleMotion();
   });
   function syncFullscreen() {
     var active = !!(document.fullscreenElement || document.webkitFullscreenElement);

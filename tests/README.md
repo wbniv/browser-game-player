@@ -1,6 +1,6 @@
 # Verification
 
-`npm test` exercises both bundle formats, exact-byte staging, immutable provenance, tampering, symlinks, config serialization and level selection. `npm run check` checks JavaScript syntax. These checks require no browser, engine or ROM download.
+`npm test` exercises both bundle formats, exact-byte staging, immutable provenance, tampering, symlinks, config serialization, level selection and the optional `playIcons` Play button (validation, rendering only when configured, unchanged default frame). `npm run check` checks JavaScript syntax. These checks require no browser, engine or ROM download.
 
 Optional browser checks reuse local Playwright and Chrome installations through `BGP_PLAYWRIGHT` and `BGP_CHROME`. Firefox uses Playwright's installed browser and Xvfb in Ubuntu 24.10. The native runtimes and authored game files remain outside this repository.
 
