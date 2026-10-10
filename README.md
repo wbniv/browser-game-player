@@ -15,10 +15,10 @@ The component package contains docs and shell code. Example binaries are separat
 Versioned package tarballs are published as [GitHub release assets](https://github.com/wbniv/browser-game-player/releases). This first release is not published to the npm registry:
 
 ```sh
-npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.4/wbniv-browser-game-player-0.1.4.tgz
+npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.5/wbniv-browser-game-player-0.1.5.tgz
 ```
 
-Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.4.tgz` for offline, locked installation.
+Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.5.tgz` for offline, locked installation.
 
 ## Use in Astro
 

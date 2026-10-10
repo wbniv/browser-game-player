@@ -84,7 +84,7 @@ flowchart TD
 
 ## Downloadable examples
 
-The [release page](https://github.com/wbniv/browser-game-player/releases) supplies one **`browser-game-player-examples-0.1.4.zip`** download. Its starting page offers both examples:
+The [release page](https://github.com/wbniv/browser-game-player/releases) supplies one **`browser-game-player-examples-0.1.4.zip`** download (published with v0.1.4; later component-only releases leave it unchanged). Its starting page offers both examples:
 
 - **SNES Doom Fire:** one 32 KiB homebrew ROM, emulator and player; its fidelity check runs 500 frames and expects `0x3C59`. The ROM is bundled with the runtime so you can try the player directly.
 - **World Foundry Baseline:** one standalone level, engine and player. The engine is reused; its preload contains only this level.

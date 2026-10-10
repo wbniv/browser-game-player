@@ -1,10 +1,16 @@
 | Date | Change |
 |------|--------|
+| [2026-10-10](https://github.com/wbniv/browser-game-player/commit/eb472e6) | Focus release downloads on the player and runnable examples |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/38289ee) | Ship one download with Baseline and Doom Fire examples |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/d8d20ff) | Use baseline and Doom Fire examples and simplify joystick circles |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/485dede) | Document player APIs and usage and ship small runnable examples |
 
 <!--history-meta v1
+eb472e6	author	Will Norris
+eb472e6	added	5
+eb472e6	deleted	8
+eb472e6	files	1
+eb472e6	body	Document only the component package and combined examples ZIP in the current release. Keep source provenance in the developer docs and previous release; stop emitting a separate ROM download.\n\nAI-Assisted: Codex CLI 0.162.0; gpt-6.1-sol; reasoning effort medium.
 38289ee	author	Will Norris
 38289ee	added	5
 38289ee	deleted	6

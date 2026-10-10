@@ -1,6 +1,6 @@
 # Runnable binary examples
 
-Download from [v0.1.4](https://github.com/wbniv/browser-game-player/releases/tag/v0.1.4):
+Download from [v0.1.4](https://github.com/wbniv/browser-game-player/releases/tag/v0.1.4) (the component package is also published separately from v0.1.5):
 
 | Download | Contents |
 |---|---|

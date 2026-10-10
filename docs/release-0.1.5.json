@@ -1,0 +1,13 @@
+{
+  "playerVersion": "0.1.5",
+  "assets": {
+    "wbniv-browser-game-player-0.1.5.tgz": { "bytes": 324346, "sha256": "38a0daa71a76c7c0da1b21fc692850eb2002dce39a2b9c83ce1c1fef410b44a9" }
+  },
+  "publishedAssets": ["wbniv-browser-game-player-0.1.5.tgz"],
+  "examplesZip": "unchanged; published with v0.1.4",
+  "verification": {
+    "packageTests": "12 pass",
+    "javascriptSyntax": "pass",
+    "layering": "Chromium: a layered utility height overrides the layered default; the previous unlayered default won over it"
+  }
+}
