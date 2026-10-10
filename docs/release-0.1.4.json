@@ -1,0 +1,93 @@
+{
+  "playerVersion": "0.1.4",
+  "examples": [
+    {
+      "adapter": "worldfoundry",
+      "bundle": "bgp1-53b7b09403cf689d614106a5",
+      "runtimeBytes": 3225753
+    },
+    {
+      "adapter": "snes",
+      "bundle": "bgp1-0908d2039c871c04d9f09558",
+      "runtimeBytes": 4071067
+    }
+  ],
+  "assets": {
+    "browser-game-player-examples-0.1.4.zip": {
+      "bytes": 3236164,
+      "sha256": "685fb3eddc178464ec395a69d9e1c195dadf3f7c878d477a6b9ceb5a206b4e09"
+    },
+    "doom-fire.sfc": {
+      "bytes": 32768,
+      "sha256": "cfd78ebfe50a541e3d80db9ea9aee08464c691a3b2e278c8338b941e2164b722"
+    },
+    "snes-example-sources-0.1.3.tar.gz": {
+      "bytes": 5037705,
+      "sha256": "6cec2b607848761e1b9c20381b0f99f9290418cacdede6e4f939e21e640a55af"
+    },
+    "wbniv-browser-game-player-0.1.4.tgz": {
+      "bytes": 322991,
+      "sha256": "8b0a545ccda7a8faaa350849266cf1ff3f305360d8da1c0b071020ec04c997ac"
+    },
+    "worldfoundry-example-sources-0.1.3.tar.gz": {
+      "bytes": 54692281,
+      "sha256": "35a1ff199e6e44be9532d4c302d61c96775ccb3197cfe682c7d5c8ca5887e477"
+    }
+  },
+  "verification": {
+    "chromium": {
+      "browser": "154.0.8037.57",
+      "engine": "chromium",
+      "results": [
+        {
+          "adapter": "worldfoundry",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        },
+        {
+          "adapter": "snes",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        }
+      ]
+    },
+    "firefox": {
+      "browser": "148.0.2",
+      "engine": "firefox",
+      "results": [
+        {
+          "adapter": "worldfoundry",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        },
+        {
+          "adapter": "snes",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        }
+      ]
+    }
+  },
+  "nativeBytesUnchangedFrom": "v0.1.3",
+  "fidelityEvidence": "v0.1.3: both browsers passed 500 frames, 0x3C59; unchanged native binaries/ROM, not repeated for packaging-only v0.1.4"
+}

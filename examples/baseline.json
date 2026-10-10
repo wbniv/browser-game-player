@@ -7,8 +7,8 @@
   "status": "Example · progress resets on restart",
   "canvasLabel": "World Foundry demo. Arrow keys move; Space selects.",
   "restartPrompt": "Restart this demo?",
-  "fallbackLabel": "Example home",
-  "fallbackUrl": "./index.html",
+  "fallbackLabel": "All examples",
+  "fallbackUrl": "../../../../index.html",
   "poster": null,
   "fullscreenOnPlay": true,
   "arguments": [

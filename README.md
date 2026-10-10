@@ -6,7 +6,7 @@ One configurable browser shell and component for World Foundry and SNES. The sha
 
 - [User guide](docs/user-guide.md): Play, fullscreen, controls, pause/restart and troubleshooting.
 - [Technical guide](docs/technical-guide.md): architecture diagrams, APIs, configuration, lifecycle, provenance, CSP and deployment.
-- [Runnable examples](examples/README.md): separate compressed SNES and World Foundry downloads, plus sources.
+- [Runnable examples](examples/README.md): one compressed download with SNES and World Foundry examples, plus sources.
 
 The component package contains docs and shell code. Example binaries are separate release assets, not npm payload or Git history.
 
@@ -15,10 +15,10 @@ The component package contains docs and shell code. Example binaries are separat
 Versioned package tarballs are published as [GitHub release assets](https://github.com/wbniv/browser-game-player/releases). This first release is not published to the npm registry:
 
 ```sh
-npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.3/wbniv-browser-game-player-0.1.3.tgz
+npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.4/wbniv-browser-game-player-0.1.4.tgz
 ```
 
-Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.3.tgz` for offline, locked installation.
+Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.4.tgz` for offline, locked installation.
 
 ## Use in Astro
 
