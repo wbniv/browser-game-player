@@ -2,15 +2,23 @@
 
 One configurable browser shell and component for World Foundry and SNES. The shared player owns loading/errors/retry, fullscreen, focused keyboard/touch input, pause/resume policy, restart and frame disposal. Adapters own native/emulator startup and run-loop operations. Game bytes and engine binaries are staged separately and never shipped in this package.
 
+## Documentation and examples
+
+- [User guide](docs/user-guide.md): Play, fullscreen, controls, pause/restart and troubleshooting.
+- [Technical guide](docs/technical-guide.md): architecture diagrams, APIs, configuration, lifecycle, provenance, CSP and deployment.
+- [Runnable examples](examples/README.md): separate compressed SNES and World Foundry downloads, plus sources.
+
+The component package contains docs and shell code. Example binaries are separate release assets, not npm payload or Git history.
+
 ## Install
 
 Versioned package tarballs are published as [GitHub release assets](https://github.com/wbniv/browser-game-player/releases). This first release is not published to the npm registry:
 
 ```sh
-npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.1/wbniv-browser-game-player-0.1.1.tgz
+npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.2/wbniv-browser-game-player-0.1.2.tgz
 ```
 
-Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.1.tgz` for offline, locked installation.
+Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.2.tgz` for offline, locked installation.
 
 ## Use in Astro
 

@@ -14,3 +14,5 @@ These are browser/emulated-touch checks, not claims of physical phone or Apple v
 
 - `node tests/touch-navigation-browser.mjs BASE_URL OUT_DIR IDENTITIES_JSON` checks the real LZSS ROM's visible chevrons and inert black margins inline and fullscreen.
 - `node tests/visibility-browser.mjs BASE_URL OUT_DIR IDENTITIES_JSON` tests visibility policy against the real native loop with an explicitly simulated document visibility event.
+
+Release ZIP verification: `node tests/release-examples.mjs http://localhost:8000 /tmp/example-evidence`. Serve extracted archives at `/examples/worldfoundry/` and `/examples/snes/`. It tests the host page and real frame, manual loading, fullscreen, menu/input, phone screenshots and the ASMisland fidelity witness; `BGP_BROWSER=firefox` uses the same documented Firefox/Xvfb environment.

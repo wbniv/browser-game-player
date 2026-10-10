@@ -1,8 +1,14 @@
 | Date | Change |
 |------|--------|
+| [2026-10-10](https://github.com/wbniv/browser-game-player/commit/1c57565) | Fix letterboxed SNES touch navigation and version bundle identity |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/0615394) | Extract shared browser game player with World Foundry and SNES adapters |
 
 <!--history-meta v1
+1c57565	author	Will Norris
+1c57565	added	3
+1c57565	deleted	0
+1c57565	files	1
+1c57565	body	AI-Assisted: Codex CLI 0.162.0; gpt-6.1-sol; reasoning effort medium.
 0615394	author	Will Norris
 0615394	added	13
 0615394	deleted	0

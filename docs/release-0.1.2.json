@@ -1,0 +1,95 @@
+{
+  "playerVersion": "0.1.2",
+  "examples": [
+    {
+      "adapter": "worldfoundry",
+      "bundle": "bgp1-232312bca8a9381a01cfcfbb",
+      "runtimeBytes": 2865302
+    },
+    {
+      "adapter": "snes",
+      "bundle": "bgp1-abc69d3c8afdf553e44a5d57",
+      "runtimeBytes": 4071111
+    }
+  ],
+  "assets": {
+    "asmisland.sfc": {
+      "bytes": 32768,
+      "sha256": "180f838caa0f4b5e56adbe04bc7993f7fbce6247cb8d043edf8a3bbf02af064f"
+    },
+    "browser-game-player-snes-example-0.1.2.zip": {
+      "bytes": 1995148,
+      "sha256": "f4e75a9ab83ae4c294ee56399a15155c8bbce9d9c45ebe9433474fe625d956f1"
+    },
+    "browser-game-player-worldfoundry-example-0.1.2.zip": {
+      "bytes": 1007657,
+      "sha256": "a303831039a48fd984c06adf76b731ceb057666bc5715d6b6390bb5757c7e215"
+    },
+    "snes-example-sources-0.1.2.tar.gz": {
+      "bytes": 5029690,
+      "sha256": "c05430f2a52319afafa54765e710d1c831a02f8d3d070985f0ba2231bd426f75"
+    },
+    "worldfoundry-example-sources-0.1.2.tar.gz": {
+      "bytes": 54470497,
+      "sha256": "c2a894b881493adf7804a29a70b6e8665f433b9ceb012ed2e7ae70d49e392a97"
+    },
+    "wbniv-browser-game-player-0.1.2.tgz": {
+      "bytes": 52619,
+      "sha256": "53e44c61a2f00cce08fce41424398679329abcf9d4fc9b9bfe5941318463862c"
+    }
+  },
+  "verification": {
+    "chromium": {
+      "browser": "154.0.8037.57",
+      "engine": "chromium",
+      "results": [
+        {
+          "adapter": "worldfoundry",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        },
+        {
+          "adapter": "snes",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x260B == gate (opaque inline-asm width-state CRC (corpus @ WRAM 0xBE), 300 frames)",
+          "errors": []
+        }
+      ]
+    },
+    "firefox": {
+      "browser": "148.0.2",
+      "engine": "firefox",
+      "results": [
+        {
+          "adapter": "worldfoundry",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        },
+        {
+          "adapter": "snes",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x260B == gate (opaque inline-asm width-state CRC (corpus @ WRAM 0xBE), 300 frames)",
+          "errors": []
+        }
+      ]
+    }
+  }
+}
