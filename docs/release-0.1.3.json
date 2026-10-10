@@ -1,0 +1,95 @@
+{
+  "playerVersion": "0.1.3",
+  "examples": [
+    {
+      "adapter": "worldfoundry",
+      "bundle": "bgp1-4de34a663f81bcb11454a70b",
+      "runtimeBytes": 3225733
+    },
+    {
+      "adapter": "snes",
+      "bundle": "bgp1-6b524da7994dfacfd86f81e0",
+      "runtimeBytes": 4071047
+    }
+  ],
+  "assets": {
+    "browser-game-player-snes-example-0.1.3.zip": {
+      "bytes": 1994491,
+      "sha256": "26a260e3ed4722fd93e39df1abee2dc027ebe8e5916ad3aa1d987c5de91718e0"
+    },
+    "browser-game-player-worldfoundry-example-0.1.3.zip": {
+      "bytes": 988497,
+      "sha256": "4dc7840ec6b322884b49df570cdc6e79fd3a6b7592a916a3861ece72c0c2f54f"
+    },
+    "doom-fire.sfc": {
+      "bytes": 32768,
+      "sha256": "cfd78ebfe50a541e3d80db9ea9aee08464c691a3b2e278c8338b941e2164b722"
+    },
+    "snes-example-sources-0.1.3.tar.gz": {
+      "bytes": 5037705,
+      "sha256": "6cec2b607848761e1b9c20381b0f99f9290418cacdede6e4f939e21e640a55af"
+    },
+    "worldfoundry-example-sources-0.1.3.tar.gz": {
+      "bytes": 54692281,
+      "sha256": "35a1ff199e6e44be9532d4c302d61c96775ccb3197cfe682c7d5c8ca5887e477"
+    },
+    "wbniv-browser-game-player-0.1.3.tgz": {
+      "bytes": 53019,
+      "sha256": "e65e461d613841634d78e574a60e02b3ca095c38e511aaff93777997b941a313"
+    }
+  },
+  "verification": {
+    "chromium": {
+      "browser": "154.0.8037.57",
+      "engine": "chromium",
+      "results": [
+        {
+          "adapter": "worldfoundry",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        },
+        {
+          "adapter": "snes",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x3C59 == gate (doom-fire, 500 frames)",
+          "errors": []
+        }
+      ]
+    },
+    "firefox": {
+      "browser": "148.0.2",
+      "engine": "firefox",
+      "results": [
+        {
+          "adapter": "worldfoundry",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "errors": []
+        },
+        {
+          "adapter": "snes",
+          "start": true,
+          "manualLoading": true,
+          "fullscreen": true,
+          "input": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x3C59 == gate (doom-fire, 500 frames)",
+          "errors": []
+        }
+      ]
+    }
+  }
+}
