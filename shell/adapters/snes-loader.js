@@ -586,8 +586,13 @@
       if (!tn) return;
       var r = canvas.getBoundingClientRect();
       if (!r.width || !r.height) return;
-      var x = (e.clientX - r.left) * canvas.width / r.width;
-      var y = (e.clientY - r.top) * canvas.height / r.height;
+      // The shared shell can letterbox the canvas. Map the displayed image,
+      // not the black margins, back to the ROM's logical touch rectangles.
+      var scale = Math.min(r.width / canvas.width, r.height / canvas.height);
+      var left = r.left + (r.width - canvas.width * scale) / 2;
+      var top = r.top + (r.height - canvas.height * scale) / 2;
+      var x = (e.clientX - left) / scale;
+      var y = (e.clientY - top) / scale;
       var bit = touchNavBitAt(tn, x, y);
       if (!bit) return;
       e.preventDefault();

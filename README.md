@@ -7,10 +7,10 @@ One configurable browser shell and component for World Foundry and SNES. The sha
 Versioned package tarballs are published as [GitHub release assets](https://github.com/wbniv/browser-game-player/releases). This first release is not published to the npm registry:
 
 ```sh
-npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.0/wbniv-browser-game-player-0.1.0.tgz
+npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.1/wbniv-browser-game-player-0.1.1.tgz
 ```
 
-Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.0.tgz` for offline, locked installation.
+Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.1.tgz` for offline, locked installation.
 
 ## Use in Astro
 

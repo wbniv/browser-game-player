@@ -11,3 +11,6 @@ Optional browser checks reuse local Playwright and Chrome installations through 
 - `node tests/consumers-browser.mjs OUT_DIR` checks actual built site routes, gallery history, fidelity and phone sizing. `BGP_INDRI_URL`, `BGP_WORLD_URL`, `BGP_BIO_URL` select local site servers (default ports 4390, 4391, 4392).
 
 These are browser/emulated-touch checks, not claims of physical phone or Apple verification. Native engine `printErr` diagnostic messages are distinguished from JavaScript exceptions.
+
+- `node tests/touch-navigation-browser.mjs BASE_URL OUT_DIR IDENTITIES_JSON` checks the real LZSS ROM's visible chevrons and inert black margins inline and fullscreen.
+- `node tests/visibility-browser.mjs BASE_URL OUT_DIR IDENTITIES_JSON` tests visibility policy against the real native loop with an explicitly simulated document visibility event.

@@ -25,7 +25,7 @@ export const sha256 = bytes => createHash('sha256').update(bytes).digest('hex');
 const stable = value => value && typeof value === 'object' && !Array.isArray(value)
   ? '{' + Object.keys(value).sort().map(k => JSON.stringify(k) + ':' + stable(value[k])).join(',') + '}'
   : Array.isArray(value) ? '[' + value.map(stable).join(',') + ']' : JSON.stringify(value);
-const bundleId = files => 'bgp1-' + sha256(stable(files)).slice(0, 24);
+const bundleId = files => 'bgp1-' + sha256(stable({protocol:PROTOCOL,playerVersion:PLAYER_VERSION,files})).slice(0, 24);
 const json = value => JSON.stringify(value).replace(/</g, '\\u003c').replace(/\u2028/g, '\\u2028').replace(/\u2029/g, '\\u2029');
 export function renderFrame(config) {
   config = validateConfig(config);

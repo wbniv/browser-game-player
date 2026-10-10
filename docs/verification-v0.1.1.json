@@ -1,0 +1,153 @@
+{
+  "date": "2026-10-10",
+  "package": "@wbniv/browser-game-player",
+  "version": "0.1.1",
+  "packageBytes": 39363,
+  "packageSha256": "4da432f204feb7de9a843d03f28896442697628673cb479a52a70802f33eb151",
+  "ubuntu": "24.10",
+  "node": "26.11.1",
+  "unitTests": 8,
+  "browsers": {
+    "chromium": {
+      "browser": "154.0.8037.57",
+      "engine": "chromium",
+      "results": [
+        {
+          "kind": "fyw",
+          "bundle": "bgp1-f2922af87ab204d054dc5e28",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 581
+        },
+        {
+          "kind": "gallery",
+          "bundle": "bgp1-df3cd67913eb3243ef8e3986",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 1477
+        },
+        {
+          "kind": "snes",
+          "bundle": "bgp1-615d3964f57d3e6de62b493a",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x260B == gate (opaque inline-asm width-state CRC (corpus @ WRAM 0xBE), 300 frames)",
+          "nativeConsoleErrorLines": 0
+        }
+      ]
+    },
+    "firefox": {
+      "browser": "148.0.2",
+      "engine": "firefox",
+      "results": [
+        {
+          "kind": "fyw",
+          "bundle": "bgp1-f2922af87ab204d054dc5e28",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 580
+        },
+        {
+          "kind": "gallery",
+          "bundle": "bgp1-df3cd67913eb3243ef8e3986",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 1477
+        },
+        {
+          "kind": "snes",
+          "bundle": "bgp1-615d3964f57d3e6de62b493a",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x260B == gate (opaque inline-asm width-state CRC (corpus @ WRAM 0xBE), 300 frames)",
+          "nativeConsoleErrorLines": 0
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "retry": true,
+    "focusPauseResume": true,
+    "cancelledRestart": true,
+    "snesPointerRelease": true,
+    "snesBlurRelease": true,
+    "snesFullscreen": true
+  },
+  "limits": [
+    "Emulated phone/touch checks; no new physical phone or Apple verification.",
+    "asmisland is a bounded fidelity witness, not a claim that every ROM was independently verified.",
+    "Native runtimes and games are separate from this package."
+  ],
+  "consumers-final": [
+    {
+      "site": "indri",
+      "ready": true,
+      "navigation": false,
+      "fidelity": false,
+      "errors": []
+    },
+    {
+      "site": "indri-snes",
+      "firstClientNavigation": true,
+      "backDisposal": true,
+      "blossom": true,
+      "fidelity": true,
+      "errors": []
+    },
+    {
+      "site": "world",
+      "ready": true,
+      "navigation": true,
+      "fidelity": false,
+      "errors": []
+    },
+    {
+      "site": "bio",
+      "ready": true,
+      "navigation": false,
+      "fidelity": true,
+      "errors": []
+    }
+  ],
+  "touch-navigation": {
+    "game": "lzss-gallery",
+    "checks": [
+      {
+        "fullscreen": false,
+        "visibleChevron": true,
+        "inertMargin": true
+      },
+      {
+        "fullscreen": true,
+        "visibleChevron": true,
+        "inertMargin": true
+      }
+    ]
+  },
+  "visibility": {
+    "simulatedVisibility": true,
+    "pausedNativeLoop": true,
+    "releasedInput": true,
+    "focusedResume": true
+  },
+  "diagnostics-final": {
+    "retry": true,
+    "focusPauseResume": true,
+    "cancelledRestart": true,
+    "confirmedRestart": true,
+    "snesPointerRelease": true,
+    "snesBlurRelease": true,
+    "snesFullscreen": true
+  },
+  "previewPolicy": "Nonce/CSP local server shim; not a deployed Cloudflare Worker."
+}
