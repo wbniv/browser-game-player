@@ -33,5 +33,6 @@ document.addEventListener('astro:before-swap', disposePlayers);
 window.addEventListener('pagehide', event => { if (!event.persisted) disposePlayers(); });
 </script>
 <style is:global>
-:where(.browser-game-player > iframe) { display:block; width:100%; min-height:320px; height:calc(56.25vw + 144px); border:0; background:#29261f; }
+/* Layered so any site rule wins, including Tailwind v4 utilities, which live in a layer; unlayered CSS beats layered CSS regardless of specificity. */
+@layer base { :where(.browser-game-player > iframe) { display:block; width:100%; min-height:320px; height:calc(56.25vw + 144px); border:0; background:#29261f; } }
 </style>
