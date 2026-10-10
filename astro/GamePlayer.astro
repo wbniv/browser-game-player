@@ -1,0 +1,37 @@
+---
+interface Props {
+  src?: string;
+  title: string;
+  id?: string;
+  class?: string;
+  frameClass?: string;
+  autoHeight?: boolean;
+  deferred?: boolean;
+  srcBase?: string;
+}
+const { src, title, id, class: klass, frameClass = '', autoHeight = true, deferred = false, srcBase } = Astro.props;
+if (!src && !deferred) throw Error('GamePlayer requires a verified frame URL or deferred gallery selection');
+---
+<div id={id} class:list={['browser-game-player', klass]} data-browser-game-player data-src={src} data-src-base={srcBase} data-title={title} data-frame-class={frameClass} data-auto-height={String(autoHeight)}>
+  <noscript><p>JavaScript is required to play this game.</p></noscript>
+</div>
+<script>
+import { connectPlayers } from '../src/embed.mjs';
+let handles: ReturnType<typeof connectPlayers> = [];
+function attachPlayers() {
+  handles = handles.filter(handle => handle.frame.isConnected);
+  const ready = document.querySelectorAll<HTMLElement>('[data-browser-game-player][data-src]');
+  for (const host of ready) handles.push(...connectPlayers({ querySelectorAll: () => [host] } as any));
+}
+function disposePlayers() {
+  document.querySelectorAll<HTMLElement>('[data-browser-game-player]').forEach(host => (host as any).player?.destroy());
+  handles.forEach(handle => handle.destroy()); handles = [];
+}
+attachPlayers();
+document.addEventListener('astro:page-load', attachPlayers);
+document.addEventListener('astro:before-swap', disposePlayers);
+window.addEventListener('pagehide', event => { if (!event.persisted) disposePlayers(); });
+</script>
+<style is:global>
+:where(.browser-game-player > iframe) { display:block; width:100%; min-height:320px; height:calc(56.25vw + 144px); border:0; background:#29261f; }
+</style>

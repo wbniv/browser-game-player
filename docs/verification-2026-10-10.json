@@ -1,0 +1,89 @@
+{
+  "date": "2026-10-10",
+  "package": "@wbniv/browser-game-player",
+  "version": "0.1.0",
+  "packageBytes": 39256,
+  "packageSha256": "81a0440cca1ddad1f71ae33f4277f15d3e91d62c57d67e1eeeb8f7ee7aa3ede7",
+  "ubuntu": "24.10",
+  "node": "26.11.1",
+  "unitTests": 8,
+  "browsers": {
+    "chromium": {
+      "version": "154.0.8037.57",
+      "results": [
+        {
+          "kind": "fyw",
+          "bundle": "bgp1-e6724b517ce8d4352103cb84",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 580
+        },
+        {
+          "kind": "gallery",
+          "bundle": "bgp1-3aff7400c86f8adea13fee7f",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 1477
+        },
+        {
+          "kind": "snes",
+          "bundle": "bgp1-9c01f9c209ae9dfcee750074",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x260B == gate (opaque inline-asm width-state CRC (corpus @ WRAM 0xBE), 300 frames)",
+          "nativeConsoleErrorLines": 0
+        }
+      ]
+    },
+    "firefox": {
+      "version": "148.0.2",
+      "results": [
+        {
+          "kind": "fyw",
+          "bundle": "bgp1-e6724b517ce8d4352103cb84",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 579
+        },
+        {
+          "kind": "gallery",
+          "bundle": "bgp1-3aff7400c86f8adea13fee7f",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": null,
+          "nativeConsoleErrorLines": 1477
+        },
+        {
+          "kind": "snes",
+          "bundle": "bgp1-9c01f9c209ae9dfcee750074",
+          "errors": [],
+          "ready": true,
+          "menuPauseResume": true,
+          "fidelity": "\u2713 FIDELITY 0x260B == gate (opaque inline-asm width-state CRC (corpus @ WRAM 0xBE), 300 frames)",
+          "nativeConsoleErrorLines": 0
+        }
+      ]
+    }
+  },
+  "diagnostics": {
+    "retry": true,
+    "focusPauseResume": true,
+    "cancelledRestart": true,
+    "snesPointerRelease": true,
+    "snesBlurRelease": true,
+    "snesFullscreen": true
+  },
+  "limits": [
+    "Emulated phone/touch checks; no new physical phone or Apple verification.",
+    "asmisland is a bounded fidelity witness, not a claim that every ROM was independently verified.",
+    "Native runtimes and games are separate from this package."
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "schema": 1,
+  "adapter": "worldfoundry",
+  "startMode": "auto",
+  "title": "World Foundry web demo",
+  "subtitle": "Choose a level on the gallery page.",
+  "status": "Loading demo\u2026",
+  "canvasLabel": "World Foundry demo. Arrow keys move; Space selects.",
+  "restartPrompt": "Restart this demo?",
+  "fallbackLabel": "World Foundry demo gallery",
+  "fallbackUrl": "/v2/play/",
+  "poster": null,
+  "fullscreenOnPlay": false,
+  "arguments": [
+    "--vram-width=5120",
+    "--vram-height=2048",
+    "--vram-slot-width=256",
+    "--vram-slot-height=256",
+    "--vram-perm-width=1024",
+    "--vram-perm-height=256",
+    "-L/parmenides_slice-standalone.iff"
+  ],
+  "help": [
+    "Arrows or I/J/K/L move. Space selects. 2 changes camera."
+  ],
+  "motionCode": null,
+  "actions": [
+    {
+      "code": "Digit2",
+      "label": "Camera",
+      "caption": "Camera"
+    },
+    {
+      "code": "Digit3",
+      "label": "Close dialogue",
+      "caption": "Close"
+    },
+    {
+      "code": "Space",
+      "label": "Select",
+      "caption": "Select"
+    }
+  ],
+  "defaultLevel": "snowgoons-standalone",
+  "levels": {
+    "snowgoons-standalone": {
+      "title": "snowgoons",
+      "arguments": [
+        "-L/snowgoons-standalone.iff"
+      ]
+    },
+    "moon_site01-standalone": {
+      "title": "moon_site01",
+      "arguments": [
+        "--vram-width=4096",
+        "--vram-height=2048",
+        "--vram-slot-width=1024",
+        "--vram-slot-height=1024",
+        "--vram-perm-width=1024",
+        "--vram-perm-height=512",
+        "-L/moon_site01-standalone.iff"
+      ]
+    },
+    "qbert_practice-standalone": {
+      "title": "qbert_practice",
+      "arguments": [
+        "-L/qbert_practice-standalone.iff"
+      ]
+    },
+    "smb_w1_1-standalone": {
+      "title": "smb_w1_1",
+      "arguments": [
+        "-L/smb_w1_1-standalone.iff"
+      ]
+    },
+    "smb_w1_2-standalone": {
+      "title": "smb_w1_2",
+      "arguments": [
+        "-L/smb_w1_2-standalone.iff"
+      ]
+    },
+    "smb_w1_3-standalone": {
+      "title": "smb_w1_3",
+      "arguments": [
+        "-L/smb_w1_3-standalone.iff"
+      ]
+    },
+    "smb_w1_4-standalone": {
+      "title": "smb_w1_4",
+      "arguments": [
+        "-L/smb_w1_4-standalone.iff"
+      ]
+    },
+    "marble-madness-standalone": {
+      "title": "marble-madness",
+      "arguments": [
+        "-L/marble-madness-standalone.iff"
+      ]
+    }
+  }
+}

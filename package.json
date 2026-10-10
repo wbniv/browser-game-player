@@ -1,0 +1,52 @@
+{
+  "name": "@wbniv/browser-game-player",
+  "version": "0.1.0",
+  "description": "Shared browser game player with World Foundry and SNES adapters",
+  "type": "module",
+  "license": "GPL-3.0-only",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "exports": {
+    ".": "./src/embed.mjs",
+    "./astro": "./astro/GamePlayer.astro",
+    "./bundle": "./src/bundle.mjs",
+    "./config": "./src/config.mjs",
+    "./shell/*": "./shell/*"
+  },
+  "bin": {
+    "browser-game-player": "./bin/player.mjs"
+  },
+  "files": [
+    "src",
+    "astro",
+    "shell",
+    "bin",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "scripts": {
+    "test": "node --test --test-isolation=none tests/*.test.mjs",
+    "check": "node --check shell/player.js && node --check src/embed.mjs"
+  },
+  "peerDependencies": {
+    "astro": ">=5 <7"
+  },
+  "peerDependenciesMeta": {
+    "astro": {
+      "optional": true
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wbniv/browser-game-player.git"
+  },
+  "homepage": "https://github.com/wbniv/browser-game-player#readme",
+  "bugs": {
+    "url": "https://github.com/wbniv/browser-game-player/issues"
+  }
+}
