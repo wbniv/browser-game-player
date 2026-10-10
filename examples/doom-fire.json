@@ -1,0 +1,68 @@
+{
+  "schema": 1,
+  "adapter": "snes",
+  "startMode": "manual",
+  "title": "Doom Fire",
+  "subtitle": "A 32 KiB SNES homebrew example",
+  "status": "Example · progress resets on restart",
+  "canvasLabel": "SNES game screen. Arrow keys move.",
+  "restartPrompt": "Restart this ROM? Current progress will be lost.",
+  "fallbackLabel": "Example home",
+  "fallbackUrl": "./index.html",
+  "poster": null,
+  "fullscreenOnPlay": true,
+  "arguments": [],
+  "help": [
+    "Arrows = D-pad; Z/X = B/A; A/S = Y/X; Q/W = L/R; Enter = Start; Shift = Select.",
+    "Verify fidelity uses this ROM’s existing WRAM self-check. Restart reloads the selected ROM."
+  ],
+  "motionCode": null,
+  "actions": [
+    {
+      "code": "ShiftLeft",
+      "label": "Select",
+      "caption": "Select"
+    },
+    {
+      "code": "Enter",
+      "label": "Start",
+      "caption": "Start"
+    },
+    {
+      "code": "KeyQ",
+      "label": "L",
+      "caption": "L"
+    },
+    {
+      "code": "KeyW",
+      "label": "R",
+      "caption": "R"
+    },
+    {
+      "code": "KeyA",
+      "label": "Y",
+      "caption": "Y"
+    },
+    {
+      "code": "KeyS",
+      "label": "X",
+      "caption": "X"
+    },
+    {
+      "code": "KeyZ",
+      "label": "B",
+      "caption": "B"
+    },
+    {
+      "code": "KeyX",
+      "label": "A",
+      "caption": "A"
+    }
+  ],
+  "game": "doom-fire",
+  "games": [
+    "doom-fire"
+  ],
+  "keyboardHint": "Arrows move · Z/X = B/A",
+  "previews": []
+}

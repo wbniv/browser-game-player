@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "adapter": "worldfoundry",
+  "startMode": "manual",
+  "title": "Baseline",
+  "subtitle": "A single World Foundry level",
+  "status": "Example · progress resets on restart",
+  "canvasLabel": "World Foundry demo. Arrow keys move; Space selects.",
+  "restartPrompt": "Restart this demo?",
+  "fallbackLabel": "Example home",
+  "fallbackUrl": "./index.html",
+  "poster": null,
+  "fullscreenOnPlay": true,
+  "arguments": [
+    "-L/baseline-standalone.iff"
+  ],
+  "help": [
+    "Arrows or I/J/K/L move. Space selects. 2 changes camera."
+  ],
+  "motionCode": null,
+  "actions": [
+    {
+      "code": "Digit2",
+      "label": "Camera",
+      "caption": "Camera"
+    },
+    {
+      "code": "Digit3",
+      "label": "Close dialogue",
+      "caption": "Close"
+    },
+    {
+      "code": "Space",
+      "label": "Select",
+      "caption": "Select"
+    }
+  ]
+}

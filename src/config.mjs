@@ -1,5 +1,5 @@
 export const PROTOCOL = 1;
-export const PLAYER_VERSION = '0.1.2';
+export const PLAYER_VERSION = '0.1.3';
 const code = /^(Arrow(Up|Down|Left|Right)|Key[A-Z]|Space|Digit[0-9]|Numpad[0-9]|Numpad(Add|Subtract|Multiply|Divide|Decimal|Enter)|Enter|ShiftLeft|ShiftRight)$/;
 const text = (value, name, limit = 4000) => {
   if (typeof value !== 'string' || !value.trim() || value.length > limit) throw Error(`Invalid ${name}`);

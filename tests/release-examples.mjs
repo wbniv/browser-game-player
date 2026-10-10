@@ -6,7 +6,7 @@ const kind=process.env.BGP_BROWSER||'chromium';
 const browser=kind==='firefox'?await firefox.launch({headless:false}):await chromium.launch({executablePath:process.env.BGP_CHROME,headless:true,args:['--no-sandbox','--enable-unsafe-swiftshader']});
 const results=[];
 try {
- for(const adapter of ['worldfoundry','snes']) {
+ for(const adapter of (process.env.BGP_EXAMPLES||'worldfoundry,snes').split(',')) {
   const context=await browser.newContext({viewport:{width:1280,height:900}});const page=await context.newPage();const errors=[];const requests=[];
   page.on('pageerror',e=>errors.push(e.message));page.on('request',r=>requests.push(r.url()));
   await page.goto(`${base}/examples/${adapter}/index.html`);
@@ -25,10 +25,15 @@ try {
   } else {
    await frame.locator('#screen').focus();await page.keyboard.down('KeyX');assert(await child.evaluate(()=>window.__bjgPlayer.state.pad&128));await page.keyboard.up('KeyX');assert.equal(await child.evaluate(()=>window.__bjgPlayer.state.pad),0);
    await frame.getByRole('button',{name:'Game menu',exact:true}).click();await frame.getByRole('button',{name:'Verify fidelity',exact:true}).click();
-   await child.waitForFunction(()=>document.querySelector('#checkresult').classList.contains('pass')||document.querySelector('#checkresult').classList.contains('fail'),null,{timeout:300000});
+   await child.waitForFunction(()=>document.querySelector('#checkresult').classList.contains('pass')||document.querySelector('#checkresult').classList.contains('fail'),null,{timeout:600000});
    assert(await frame.locator('#checkresult').evaluate(e=>e.classList.contains('pass')));fidelity=await frame.locator('#checkresult').textContent();
   }
-  await page.screenshot({path:out+'/'+adapter+'-desktop.png'});await page.setViewportSize({width:390,height:844});await page.screenshot({path:out+'/'+adapter+'-phone.png'});
+  if(adapter==='snes') {
+   // Wait for actual post-title flame pixels, not the verification badge or stale canvas.
+   await child.waitForFunction(()=>{const c=document.querySelector('#screen');const pixels=c.getContext('2d').getImageData(0,Math.floor(c.height*.6),c.width,Math.floor(c.height*.35)).data;let hot=0;for(let i=0;i<pixels.length;i+=4)if(pixels[i]>110&&pixels[i]>pixels[i+1]*1.2&&pixels[i+2]<80)hot++;return hot>1000;},null,{timeout:240000});
+  }
+  assert(await frame.locator('.direction').evaluateAll(nodes=>nodes.every(n=>!n.textContent.trim())));
+  await page.screenshot({path:out+'/'+adapter+'-desktop.png',fullPage:true});await page.setViewportSize({width:390,height:844});await page.screenshot({path:out+'/'+adapter+'-phone.png',fullPage:true});
   assert.deepEqual(errors,[]);results.push({adapter,start:true,manualLoading:true,fullscreen:true,input:true,menuPauseResume:true,fidelity,errors});await context.close();console.log(adapter,'pass');
  }
  writeFileSync(out+'/results.json',JSON.stringify({browser:await browser.version(),engine:kind,results},null,2)+'\n');

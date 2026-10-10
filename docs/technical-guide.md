@@ -29,7 +29,7 @@ Use the pinned `.node-version` for development and CI. Consumers require Node >=
 
 ## Prepare a verified frame
 
-Start from a checked-in config in `examples/`. Wrap it in build options:
+Start from [`examples/baseline.json`](../examples/baseline.json) for World Foundry or [`examples/doom-fire.json`](../examples/doom-fire.json) for SNES. These are the actual downloadable example profiles; the larger FYW/gallery/SNES consumer configs remain separate. Wrap it in build options:
 
 ```json
 {

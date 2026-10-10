@@ -10,7 +10,7 @@ Click or tap the game to give it keyboard focus. The first interaction also enab
 
 ## Controls
 
-Drag the circular joystick to move; release it to stop. You can hold an action with another finger. The labels beside the joystick are the selected game's actions. Keyboard input belongs to the focused game; release a held key before switching to another player.
+The joystick is a plain circle with a movable center. Drag the circular joystick to move; release it to stop. You can hold an action with another finger. The labels beside the joystick are the selected game's actions. Keyboard input belongs to the focused game; release a held key before switching to another player.
 
 | World Foundry default | Keyboard |
 |---|---|
@@ -43,8 +43,8 @@ Open the menu for control help, fullscreen, restart and any game-specific action
 
 The [release page](https://github.com/wbniv/browser-game-player/releases) supplies two independent ZIP downloads:
 
-- **SNES ASMisland:** one 32 KiB homebrew ROM, emulator and player; its fidelity check runs 300 frames and expects `0x260B`. The raw `.sfc` is also published separately.
-- **World Foundry Snowgoons:** one standalone level, engine and player. The engine is reused; its preload contains only this level.
+- **SNES Doom Fire:** one 32 KiB homebrew ROM, emulator and player; its fidelity check runs 500 frames and expects `0x3C59`. The raw `.sfc` is also published separately.
+- **World Foundry Baseline:** one standalone level, engine and player. The engine is reused; its preload contains only this level.
 
 Unzip either download, open a terminal in the extracted directory, and run:
 

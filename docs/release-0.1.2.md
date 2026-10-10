@@ -1,3 +1,5 @@
+**Unpublished draft, superseded by [v0.1.3](release-0.1.3.md).** The v0.1.2 source tag is preserved; its draft assets were removed.
+
 # v0.1.2 — guides and small runnable examples
 
 Added a [user guide](user-guide.md) and [technical guide](technical-guide.md) with architecture/lifecycle diagrams, API/configuration reference, asset provenance, hosting/CSP, controls and troubleshooting. Guides and text-only example configurations/tooling ship in the 52,619-byte component package. This release changes no runtime behavior beyond the component version used by immutable bundle receipts. Existing consumers can retain their matching v0.1.1 package/bundles.
