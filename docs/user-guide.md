@@ -14,7 +14,7 @@ Browser Game Player supplies the game screen, controls, loading messages and men
 
 ## Start and fullscreen
 
-Press **Play**. A title screen can appear before the game downloads. Some pages start automatically; those normally stay inline until you choose fullscreen from the menu. Manual Play requests fullscreen only when the page has enabled it. If the browser declines, you can still play inline.
+Press **Play**. On some pages a small icon (a triangle alternating with a temple, controller or cube) cycles in front of the label; it is decoration only and stays still if your system asks for reduced motion. A title screen can appear before the game downloads. Some pages start automatically; those normally stay inline until you choose fullscreen from the menu. Manual Play requests fullscreen only when the page has enabled it. If the browser declines, you can still play inline.
 
 Click or tap the game to give it keyboard focus. The first interaction also enables browser audio where the runtime supports audio. On a phone, landscape orientation usually gives the game more room. Black margins around a SNES screen preserve its shape; they are not touch controls.
 
@@ -96,6 +96,26 @@ python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
 Open **http://localhost:8000/**, choose **Baseline** or **Doom Fire**, and press Play. Use **All examples** to return to the starting page. Stop the server with Ctrl+C. These are static websites, not native installers. Opening `index.html` directly with a `file:` URL will not reliably load WebAssembly or game files. No Node, compiler, Emscripten SDK or internet access is required to play the extracted example.
+
+## Frequently asked questions
+
+**Do I need to install anything?** No. Games run in a recent browser page. Only the [downloadable examples](#downloadable-examples) need a small local web server, because browsers will not reliably load WebAssembly from a `file:` page.
+
+**Does it save my progress?** No. The player has no saved games or save states, and **Restart** (after you confirm) reloads the game and loses current progress. A game page may say more about its own progress.
+
+**Which keys or buttons do I use?** It depends on the game. Open the menu for that game's control help. On a phone, use the on-screen joystick and buttons. Gamepad support is listed in a game's menu help where the game provides it.
+
+**Why does the game pause when I switch tabs or click elsewhere?** To release held keys and stop the game running unseen. Click or tap the game to continue.
+
+**Why are there black bars around a SNES game?** They keep the console's original screen shape. They are not touch controls.
+
+**Why does a game open inline instead of fullscreen?** Fullscreen is only requested when the page enables it, and your browser may decline. Use the menu's fullscreen action, or play inline.
+
+**Why do I see a scrollbar inside the game frame, or a large empty band under it?** That is a layout problem on the page, not something you need to fix. Reload the page; if it persists, report it with the page address and your browser. Site owners: see [Sizing the frame](technical-guide.md#sizing-the-frame).
+
+**Which browsers work?** The player has been tested in Chromium and Firefox, including phone-sized touch views. It has not been tested on physical phones or Apple devices, so those are not promised.
+
+More fixes are in the next section.
 
 ## If something goes wrong
 

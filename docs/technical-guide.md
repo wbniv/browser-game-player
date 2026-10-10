@@ -69,8 +69,8 @@ const { frame } = verifyManifest('public/games/demo', '/games/demo');
 | `src` | Required verified frame URL unless `deferred` is true. |
 | `title` | Required accessible iframe title. |
 | `id`, `class` | Host div identifier/classes. |
-| `frameClass` | Class placed on iframe. |
-| `autoHeight` | true; accepts bounded frame height updates. |
+| `frameClass` | Class placed on iframe. The component's default frame size is layered CSS (`@layer base`), so a site rule or Tailwind utility on this class overrides it (see [Sizing the frame](#sizing-the-frame)). |
+| `autoHeight` | true; accepts bounded frame height updates and hides the frame's own scrollbar. |
 | `deferred` | false; emits a host without starting a frame. |
 | `srcBase` | Stored as `data-src-base` for site-owned gallery code; not an automatic picker. |
 
@@ -158,6 +158,14 @@ Messages use `{type:'browser-game-player', protocol:1, instanceId, command}` or 
 The shell clears held keys/pointers on cancellation, focus loss, pause and teardown. Hidden-document events pause; resume requires focus/interaction. Fullscreen loss, WebGL context restoration, OS occlusion and mobile background behavior are not all proven across platforms. No persistence or save-state API is promised.
 
 WF wraps existing Module startup/main-loop methods. SNES retains bsnes-jg 2.1.0 binaries and its loader's pad mapping, WRAM checks and ROM hit rectangles. The narrow hook layer delegates fullscreen/input lifecycle to the shell. Pointer coordinates account for the displayed image's letterboxing; black margins remain inert.
+
+## Sizing the frame
+
+By default the frame follows the player: the shell reports its content height, the host applies it as an inline height (bounded to 200–2400 px), and the host sets `scrolling="no"` on the iframe. The frame's own scrollbar is hidden on purpose. A visible scrollbar takes about 15 px of width, which narrows the canvas and changes its height, so a one-pixel shortfall could keep it on screen.
+
+Before the frame reports a height it uses a default size, `calc(56.25vw + 144px)` with a 320 px minimum. That default is in `@layer base` and has zero specificity, so any site rule wins, including Tailwind v4 utilities, which also live in a layer. Unlayered CSS beats layered CSS whatever the specificity, which is why an unlayered default once beat `h-[68vh]` and left a gap under the player.
+
+Pin a height only with `autoHeight={false}`. The host then leaves the frame's scrollbar alone, and you are responsible for a height that fits the controls on every width. Prefer the default.
 
 ## Serving, CSP and caching
 

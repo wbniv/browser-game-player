@@ -24,6 +24,8 @@ try{
  await send({});assert.equal(await page.evaluate(()=>first.state),'running');
  await send({event:'height',height:99999});assert.equal(await page.evaluate(()=>first.frame.style.height),'');
  await send({event:'height',height:640});assert.equal(await page.evaluate(()=>first.frame.style.height),'640px');
+ assert.equal(await page.evaluate(()=>first.frame.scrolling),'no');
+ assert.equal(await page.evaluate(async()=>{const {mountPlayer}=await import('/embed.mjs');const h=document.createElement('div');document.body.append(h);const fixed=mountPlayer(h,{src:'/frame',autoHeight:false});const value=fixed.frame.scrolling;fixed.destroy();h.remove();return value;}),'');
  const old=await page.evaluate(()=>first.instanceId);await page.evaluate(()=>first.setSource('/frame?game=other'));
  assert.notEqual(await page.evaluate(()=>first.instanceId),old);await send({instanceId:old});assert.equal(await page.evaluate(()=>first.state),'idle');
  await page.evaluate(()=>{first.destroy();first.destroy();second.destroy();});assert.equal(await page.locator('iframe').count(),0);

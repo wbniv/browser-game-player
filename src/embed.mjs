@@ -11,6 +11,9 @@ export function mountPlayer(target, options) {
   frame.className = options.className || '';
   frame.allow = 'fullscreen; autoplay; gamepad'; frame.allowFullscreen = true;
   frame.loading = options.loading || 'eager'; frame.src = source.href;
+  // A host that sizes the frame from the player's reported height must not also get a frame scrollbar:
+  // its width narrows the canvas, which changes the height again, so a 1px shortfall can stick.
+  if (options.autoHeight !== false) frame.scrolling = 'no';
   let destroyed = false;
   let current = 'idle', connected = false;
   let pending = [];

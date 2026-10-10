@@ -4,7 +4,7 @@
 
 Optional browser checks reuse local Playwright and Chrome installations through `BGP_PLAYWRIGHT` and `BGP_CHROME`. Firefox uses Playwright's installed browser and Xvfb in Ubuntu 24.10. The native runtimes and authored game files remain outside this repository.
 
-- `node tests/host-browser.mjs` creates its own small server and exercises isolated instances, queued commands, bounded size messages, stale identity rejection, source rotation and disposal.
+- `node tests/host-browser.mjs` creates its own small server and exercises isolated instances, queued commands, bounded size messages, stale identity rejection, source rotation, disposal and the frame scrollbar policy (hidden when the host follows the player's height, untouched with `autoHeight` off).
 - `node tests/browser.mjs BASE_URL OUT_DIR IDENTITIES_JSON` uses a server with frozen bundles below `/bundles/` and an identity map keyed `fyw`, `gallery`, `snes`. It checks manual download gating, real startup, menu pause/resume, keyboard input, fullscreen and the current `doom-fire` WRAM self-check. Set `BGP_BROWSER=firefox` and run under Xvfb for Firefox. Its verification timeout accommodates Firefox's slower unchanged emulator loop.
 - `node tests/diagnostics-browser.mjs BASE_URL OUT_DIR IDENTITIES_JSON` checks failed-loader retry/reload, focus policy, cancelled restart, SNES pointer/key release and phone fullscreen.
 - `node tests/accepted-input.mjs FRAME_URL OUT_DIR` retains the accepted FYW two-finger, pointer-cancellation and keyboard-ownership regression.

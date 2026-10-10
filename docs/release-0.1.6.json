@@ -1,0 +1,19 @@
+{
+  "playerVersion": "0.1.6",
+  "assets": {
+    "wbniv-browser-game-player-0.1.6.tgz": {
+      "bytes": 325322,
+      "sha256": "0d701f2b653ef38496dacec63084464486bc42d97701ed6e23fe99abbb35ac33"
+    }
+  },
+  "publishedAssets": [
+    "wbniv-browser-game-player-0.1.6.tgz"
+  ],
+  "examplesZip": "unchanged; published with v0.1.4",
+  "verification": {
+    "packageTests": "12 pass",
+    "javascriptSyntax": "pass",
+    "hostBrowserTest": "pass; fails without the change",
+    "scrollbar": "Chromium, real scrollbars, World Foundry page: previous version stage 895 px (scrollbar) in 6 of 6 loads; 0.1.6 stage 910 px in 6 of 6 at 1440 and 1920 px"
+  }
+}
