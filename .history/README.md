@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-29](https://github.com/wbniv/browser-game-player/commit/18178d5) | Correct bare SNES display ratio to 4:3 |
 | [2026-10-29](https://github.com/wbniv/browser-game-player/commit/ba07a59) | Export integration examples in v0.1.10 |
 | [2026-10-29](https://github.com/wbniv/browser-game-player/commit/ef514f8) | Keep bare previews at the SNES aspect ratio |
 | [2026-10-29](https://github.com/wbniv/browser-game-player/commit/bfdf670) | Add bare SNES display and integration recipes |
@@ -12,6 +13,10 @@
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/0615394) | Extract shared browser game player with World Foundry and SNES adapters |
 
 <!--history-meta v1
+18178d5	author	Will Norris
+18178d5	added	2
+18178d5	deleted	2
+18178d5	files	1
 ba07a59	author	Will Norris
 ba07a59	added	2
 ba07a59	deleted	2
