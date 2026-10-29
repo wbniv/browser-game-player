@@ -6,7 +6,8 @@ One configurable browser shell and component for World Foundry and SNES. The sha
 
 - [User guide](docs/user-guide.md): Play, fullscreen, controls, pause/restart and troubleshooting.
 - [Technical guide](docs/technical-guide.md): architecture diagrams, APIs, configuration, lifecycle, provenance, CSP and deployment.
-- [Runnable examples](examples/README.md): one compressed download with SNES and World Foundry examples, plus sources.
+- [Integration examples](examples/README.md): HTML and Astro embeds with and without touch controls, WordPress blocks, and setup notes for Claude and Codex.
+- [Runnable binary examples](examples/.history/README.md): archived engine-backed downloads and build instructions.
 
 The component package contains docs and shell code. Example binaries are separate release assets, not npm payload or Git history.
 
@@ -15,10 +16,10 @@ The component package contains docs and shell code. Example binaries are separat
 Versioned package tarballs are published as [GitHub release assets](https://github.com/wbniv/browser-game-player/releases). This first release is not published to the npm registry:
 
 ```sh
-npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.6/wbniv-browser-game-player-0.1.6.tgz
+npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.8/wbniv-browser-game-player-0.1.8.tgz
 ```
 
-Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.6.tgz` for offline, locked installation.
+Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.8.tgz` for offline, locked installation.
 
 ## Use in Astro
 
@@ -30,6 +31,8 @@ const { frame } = verifyManifest('public/games/my-game', '/games/my-game');
 ---
 <GamePlayer src={frame} title="My game" />
 ```
+
+For a bare display with no overlay or touch controls, add `&display=bare` to the frame URL. The SNES frame starts the selected ROM automatically. See the [HTML and Astro variants](examples/README.md) for complete examples.
 
 The verified bundle config selects `worldfoundry` or `snes`. Choose a declared gallery level with `?level=<slug>`, or a declared ROM with `?game=<id>`. Unknown selections fall back to configured defaults. A site-owned gallery can use `deferred` and `srcBase` to resolve a deep link before mounting; it remains responsible for URL/history and picker UI.
 

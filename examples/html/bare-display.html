@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bare SNES display</title>
+<style>
+  body { margin: 2rem auto; max-width: 760px; padding: 0 1rem; font: 16px/1.5 system-ui, sans-serif; }
+  #player { width: min(180px, 48vw); }
+</style>
+<h1>Bare SNES display</h1>
+<div id="player"></div>
+<script type="module">
+  import { mountPlayer } from '/player/browser-game-player/src/embed.mjs';
+  mountPlayer(document.querySelector('#player'), {
+    src: '/player/snes/frame.html?game=mandel-display&display=bare',
+    title: 'Mandelbrot SNES display',
+  });
+</script>
+</html>

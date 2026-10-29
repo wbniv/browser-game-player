@@ -12,6 +12,7 @@
 #menu button{display:flex;align-items:center;gap:10px}#menu button svg{width:20px;height:20px;flex-shrink:0;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
 
 .snes canvas{aspect-ratio:8/7;max-height:640px;object-fit:contain;image-rendering:pixelated}.snes .actions{flex-wrap:wrap;height:auto;justify-content:flex-end;max-width:60%}.snes #touch{flex-wrap:wrap;height:auto;min-height:calc(var(--pad-size) + 16px);row-gap:12px}.snes #stage:fullscreen canvas{object-fit:contain;max-height:none}.snes .caption{font-size:10px}.snes .symbol{font-size:16px}.snes .actions{row-gap:16px}.snes #checkresult{display:block;padding:8px}.snes #checkresult.pass{color:#d2f000}.snes #checkresult.fail{color:#ff9c9c}
+.display-only #overlay,.display-only #touch,.display-only .fallback{display:none!important}.display-only #stage{overflow:hidden}
 
 /* Keep all SNES controls together on phone screens, with a compact two-row face-button grid. */
 @media(max-width:520px){

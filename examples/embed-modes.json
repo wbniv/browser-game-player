@@ -1,0 +1,13 @@
+{
+  "schema": 1,
+  "bundleConfig": "examples/snes.json",
+  "sameOrigin": true,
+  "examples": [
+    { "host": "html", "controls": true, "file": "examples/html/with-controls.html", "query": "?game=mandel-display" },
+    { "host": "html", "controls": false, "file": "examples/html/bare-display.html", "query": "?game=mandel-display&display=bare" },
+    { "host": "astro", "controls": true, "file": "examples/astro/WithControls.astro", "query": "?game=mandel-display" },
+    { "host": "astro", "controls": false, "file": "examples/astro/BareDisplay.astro", "query": "?game=mandel-display&display=bare" },
+    { "host": "wordpress", "controls": true, "file": "examples/wordpress/README.md", "query": "?game=mandel-display" },
+    { "host": "wordpress", "controls": false, "file": "examples/wordpress/README.md", "query": "?game=mandel-display&display=bare" }
+  ]
+}

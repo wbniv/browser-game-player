@@ -1,0 +1,8 @@
+---
+import GamePlayer from '@wbniv/browser-game-player/astro';
+import { verifyManifest } from '@wbniv/browser-game-player/bundle';
+
+const { frame } = verifyManifest('public/player/snes', '/player/snes');
+---
+
+<GamePlayer src={`${frame}?game=mandel-display`} title="Mandelbrot SNES player" />

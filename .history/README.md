@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-11](https://github.com/wbniv/browser-game-player/commit/eb457fd) | Hide the frame scrollbar when the host follows the player's height (0.1.6) |
 | [2026-10-11](https://github.com/wbniv/browser-game-player/commit/a8ed92b) | Release 0.1.5 notes: Play icons and themable frame size |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/38289ee) | Ship one download with Baseline and Doom Fire examples |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/d8d20ff) | Use baseline and Doom Fire examples and simplify joystick circles |
@@ -8,6 +9,11 @@
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/0615394) | Extract shared browser game player with World Foundry and SNES adapters |
 
 <!--history-meta v1
+eb457fd	author	Will Norris
+eb457fd	added	2
+eb457fd	deleted	2
+eb457fd	files	1
+eb457fd	body	With autoHeight on, the frame's own scrollbar could appear while loading\nand stay: its ~15 px width narrows the canvas, which changes the height,\nso a one-pixel shortfall kept it. On worldfoundry.org the previous version\nshowed the scrollbar in 6 of 6 Chromium loads. Set scrolling="no" on the\nframe when autoHeight is on; pinned-height hosts are unchanged.\n\nAdd a user-guide FAQ and Play icon note, a "Sizing the frame" section in\nthe technical guide, and the 0.1.6 release notes.\n\nAI-Assisted: Claude Code; claude-sonnet-5-5.\nCo-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>\nClaude-Session: https://claude.ai/code/session_01DS7xsYjHjzWXscfvzcVFfL
 a8ed92b	author	Will Norris
 a8ed92b	added	2
 a8ed92b	deleted	2

@@ -1,0 +1,15 @@
+---
+import GamePlayer from '@wbniv/browser-game-player/astro';
+import { verifyManifest } from '@wbniv/browser-game-player/bundle';
+
+const { frame } = verifyManifest('public/player/snes', '/player/snes');
+---
+
+<div class="bare-preview">
+  <GamePlayer src={`${frame}?game=mandel-display&display=bare`} title="Mandelbrot SNES display" frameClass="bare-preview-frame" />
+</div>
+
+<style is:global>
+  .bare-preview { width: min(180px, 48vw); }
+  .bare-preview-frame { display: block; width: 100%; min-height: 0 !important; height: 158px !important; border: 0; }
+</style>

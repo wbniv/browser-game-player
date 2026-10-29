@@ -21,6 +21,8 @@ import { createAdapter as snes } from './adapters/snes.js';
   }
   document.title = config.title;
   document.body.classList.toggle('snes',config.adapter === 'snes');
+  var displayOnly = new URLSearchParams(location.search).get('display') === 'bare';
+  document.documentElement.classList.toggle('display-only',displayOnly);
   document.getElementById('game-title').textContent = config.title;
   document.getElementById('game-subtitle').textContent = config.subtitle;
   document.getElementById('status').textContent = config.status;
@@ -240,7 +242,7 @@ import { createAdapter as snes } from './adapters/snes.js';
       ready:function() {
         if (failed) return;
         started=true;loading=false;overlay.hidden=true;focus.disabled=false;restart.disabled=false;
-        document.getElementById('touch').hidden=false;
+        document.getElementById('touch').hidden=displayOnly;
         window.dispatchEvent(new Event('resize'));
         notify('ready'); paused=true; activate();
         if (document.hidden || !menu.hidden || document.activeElement !== canvas) pause(true);

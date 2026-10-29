@@ -1,6 +1,38 @@
-# Runnable binary examples
+# Integration examples
 
-Download from [v0.1.4](https://github.com/wbniv/browser-game-player/releases/tag/v0.1.4) (the component package is also published separately from v0.1.5):
+These examples show the same verified SNES player bundle embedded in HTML, Astro and WordPress, with either the standard player controls or a bare display. Claude and Codex setup notes are in [agent-instructions](agent-instructions/).
+
+## HTML
+
+- [With touch controls](html/with-controls.html)
+- [Bare display](html/bare-display.html)
+
+Both examples assume the frozen bundle is deployed at `/player/snes/`; change that path to the same-origin directory used by your site. Build the SNES bundle from [`snes.json`](snes.json), then copy the complete bundle directory, including `frame.html`, `player.css`, `player.js`, the ROM and core assets. Keep these resources on the same origin as the page.
+
+## Astro
+
+- [With touch controls](astro/WithControls.astro)
+- [Bare display](astro/BareDisplay.astro)
+
+The Astro samples use `verifyManifest` at build time and `GamePlayer` for the iframe lifecycle and responsive height. Place each file in a page or component and update the public bundle paths for your project.
+
+## WordPress
+
+The [Gutenberg Custom HTML block examples](wordpress/README.md) use a player bundle hosted on the WordPress site or a same-origin static host. WordPress must serve `.wasm`, `.mjs`, `.js`, `.json`, and ROM assets with suitable MIME types; ordinary Media Library uploads may reject or rewrite these files.
+
+## Claude and Codex
+
+Use [`CLAUDE.md`](agent-instructions/CLAUDE.md) with Claude Code and [`AGENTS.md`](agent-instructions/AGENTS.md) with Codex or other AGENTS.md-aware coding tools. Both guides point agents to the same four HTML/Astro examples and explain the same-origin requirement.
+
+## Display modes
+
+[`embed-modes.json`](embed-modes.json) records the supported player variants. Standard frames include the Play/loading presentation and touch controls. Append `display=bare` to a SNES frame URL for an auto-starting canvas with no overlay or touch bar. This mode is intended for a visual preview; use the standard frame when visitors need touchscreen input.
+
+---
+
+## Archived runnable binary examples
+
+The earlier engine-backed downloads are documented in [the archived examples guide](.history/README.md). They are separate from the small reusable player package.
 
 | Download | Contents |
 |---|---|
