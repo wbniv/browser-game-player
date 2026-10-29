@@ -19,7 +19,7 @@ Versioned package tarballs are published as [GitHub release assets](https://gith
 npm install https://github.com/wbniv/browser-game-player/releases/download/v0.1.10/wbniv-browser-game-player-0.1.10.tgz
 ```
 
-Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.10.tgz` for offline, locked installation.
+Consumers can vendor the same small tarball and use `file:vendor/browser-game-player-0.1.11.tgz` for offline, locked installation.
 
 ## Use in Astro
 
@@ -74,7 +74,7 @@ Receipts independently identify schema/protocol, component version, content hash
 
 World Foundry uses its existing `Module.callMain`, `pauseMainLoop` and `resumeMainLoop` and matching JS/WASM/data preload bundle. Its renderer, allocator, authored settings and 64 KiB stack are unchanged by extraction.
 
-SNES reuses the bsnes-jg browser loader from `@wbniv/bsnes-jg-player` 1.1.0, with narrow lifecycle hooks and delegated shell/fullscreen ownership. The core binaries, ROM loading, pad bits, 256×224 / 8:7 presentation, ROM touch navigation and WRAM/fidelity algorithms are retained. The package does not rebuild or contain the emulator core. Fidelity uses each staged ROM's actual manifest expectations; historical README example CRCs are not a substitute for the current manifest.
+SNES reuses the bsnes-jg browser loader from `@wbniv/bsnes-jg-player` 1.1.0, with narrow lifecycle hooks and delegated shell/fullscreen ownership. It renders the full 256×224 framebuffer at the traditional 4:3 television display ratio; 8:7 describes the source sample grid. ROM touch navigation and WRAM/fidelity algorithms are retained. The package does not rebuild or contain the emulator core. Fidelity uses each staged ROM's actual manifest expectations; historical README example CRCs are not a substitute for the current manifest.
 
 Controls and help come from game configuration. The SNES profile exposes all eight action/shoulder/system controls plus the D-pad. Browser gamepad support is not added to the SNES loader; only adapters with existing support may claim it. Saved progress, context restoration, direct same-document runtime instances and a hosted player service are outside this release.
 

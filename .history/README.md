@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-29](https://github.com/wbniv/browser-game-player/commit/ba07a59) | Export integration examples in v0.1.10 |
 | [2026-10-29](https://github.com/wbniv/browser-game-player/commit/ef514f8) | Keep bare previews at the SNES aspect ratio |
 | [2026-10-29](https://github.com/wbniv/browser-game-player/commit/bfdf670) | Add bare SNES display and integration recipes |
 | [2026-10-11](https://github.com/wbniv/browser-game-player/commit/eb457fd) | Hide the frame scrollbar when the host follows the player's height (0.1.6) |
@@ -11,6 +12,10 @@
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/0615394) | Extract shared browser game player with World Foundry and SNES adapters |
 
 <!--history-meta v1
+ba07a59	author	Will Norris
+ba07a59	added	2
+ba07a59	deleted	2
+ba07a59	files	1
 ef514f8	author	Will Norris
 ef514f8	added	2
 ef514f8	deleted	2

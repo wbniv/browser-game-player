@@ -1,6 +1,6 @@
 # v0.1.1 verification — 2026-10-10
 
-This patch preserves ROM touch hitboxes when the shared SNES canvas is letterboxed inline or in fullscreen. It maps pointer coordinates relative to the displayed 8:7 image and leaves black margins inert. The existing ROM hit rectangles, pad bits, pulse duration, emulator core and fidelity algorithm are unchanged. Bundle identity now also includes protocol and component version, so metadata-only package revisions cannot collide with an older immutable receipt.
+This patch preserves ROM touch hitboxes when the shared SNES canvas is letterboxed inline or in fullscreen. It maps pointer coordinates relative to the full 4:3 displayed image and leaves black margins inert. The 256×224 (8:7) source framebuffer is horizontally expanded for the traditional TV presentation. The existing ROM hit rectangles, pad bits, pulse duration, emulator core and fidelity algorithm are unchanged. Bundle identity now also includes protocol and component version, so metadata-only package revisions cannot collide with an older immutable receipt.
 
 The real `lzss-gallery` ROM passes Right-chevron, pointer-cancellation and inert-margin checks in both letterboxed views; its action retains “Verify benchmark.” Chromium and Firefox repeat real startup/control/fidelity checks with the unchanged cores. The initial [verification record](verification-2026-10-10.md) covers the shared shell and full package surface.
 

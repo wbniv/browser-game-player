@@ -9,4 +9,4 @@ Choose one example from [`../html/`](../html/) or [`../astro/`](../astro/):
 
 Build and deploy the frozen SNES bundle with the host site. Use the bundle's `verifyManifest` receipt for Astro; keep the frame and all runtime, ROM, and metadata assets on the same origin as the host page. For WordPress, adapt the Gutenberg examples in [`../wordpress/README.md`](../wordpress/README.md).
 
-Keep iframe titles accessible, size bare previews to the SNES 8:7 display, and preserve `allow="fullscreen; autoplay; gamepad"` when writing a raw iframe. Do not embed the Indri app page itself; embed the frozen `frame.html` from your own site.
+Keep iframe titles accessible and size bare previews to the 4:3 SNES display. The source framebuffer is 256×224 (8:7 samples), but the full picture is horizontally expanded for the traditional 4:3 TV presentation. Preserve `allow="fullscreen; autoplay; gamepad"` when writing a raw iframe. Do not embed the Indri app page itself; embed the frozen `frame.html` from your own site.

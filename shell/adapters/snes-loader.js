@@ -90,9 +90,9 @@
     if (!w || !h) return;
     // bsnes hands us a 512-wide buffer for lores content (256 logical px doubled)
     // and ~240 scanlines incl. overscan. Collapse the 2x horizontal doubling and
-    // crop to the 224 visible NTSC lines — the true 256x224 logical frame, square
-    // pixels at the SNES 8:7 aspect (matches the gate's jgxcheck PNG). Without
-    // this the picture is stretched 2x wide.
+    // crop to the 224 visible NTSC lines — the true 256x224 logical frame. Its raw
+    // sample grid is 8:7; CSS expands it to the traditional 4:3 television shape.
+    // Without collapsing the 2x horizontal buffer, the picture is stretched wide.
     var step = w >= 512 ? 2 : 1;
     var ow = (w / step) | 0;
     // Skip the top NTSC overscan when the core hands us a tall buffer. Measured
@@ -477,9 +477,9 @@
         availW = Math.max(0, Math.floor(availW) - 2);
         availH = Math.max(0, Math.floor(availH) - 2);
         // The core's backing buffer can switch to a native 512x240 frame. That is storage
-        // resolution, not the intended SNES display shape; fullscreen must remain 256:224 (8:7).
-        var displayW = 8;
-        var displayH = 7;
+        // resolution, not the intended display shape: use 4:3 for the complete SNES TV picture.
+        var displayW = 4;
+        var displayH = 3;
         var scale = Math.min(availW / displayW, availH / displayH);
         if (!(scale > 0)) return;
         wrap.style.setProperty("--bjg-fs-width", Math.max(1, Math.floor(displayW * scale)) + "px");
@@ -541,7 +541,7 @@
         "}" +
         ".rp-screen:-webkit-full-screen canvas,.rp-screen:fullscreen canvas{" +
           "display:block;width:var(--bjg-fs-width,auto);height:var(--bjg-fs-height,auto);" +
-          "max-width:100%;max-height:100%;aspect-ratio:8/7;image-rendering:pixelated;" +
+          "max-width:100%;max-height:100%;aspect-ratio:4/3;image-rendering:pixelated;" +
         "}";
       document.head.appendChild(styleEl);
 

@@ -9,4 +9,4 @@ Choose one example from [`../html/`](../html/) or [`../astro/`](../astro/):
 
 Build and deploy the frozen SNES bundle with the host site. For Astro, call `verifyManifest` during the build and use `GamePlayer`. For plain HTML, use `mountPlayer` and serve the shared module plus the frozen bundle on the same origin. WordPress instructions are in [`../wordpress/README.md`](../wordpress/README.md).
 
-Give each iframe a useful title, keep a bare SNES screen at the 8:7 aspect ratio, and retain `allow="fullscreen; autoplay; gamepad"` for a raw iframe. Embed the frozen `frame.html`, never the surrounding Indri app page.
+Give each iframe a useful title, size a bare SNES display at 4:3, and retain `allow="fullscreen; autoplay; gamepad"` for a raw iframe. The 256×224 source grid is 8:7, while the complete picture is horizontally expanded to 4:3 for the original TV presentation. Embed the frozen `frame.html`, never the surrounding Indri app page.
