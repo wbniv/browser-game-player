@@ -1,6 +1,6 @@
 {
   "name": "@wbniv/browser-game-player",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "Shared browser game player with World Foundry and SNES adapters",
   "type": "module",
   "license": "GPL-3.0-only",
@@ -12,6 +12,7 @@
     "./astro": "./astro/GamePlayer.astro",
     "./bundle": "./src/bundle.mjs",
     "./config": "./src/config.mjs",
+    "./examples/*": "./examples/*",
     "./shell/*": "./shell/*"
   },
   "bin": {
@@ -30,6 +31,7 @@
     "docs/technical-guide.md",
     "docs/release-0.1.8.md",
     "docs/release-0.1.9.md",
+    "docs/release-0.1.10.md",
     "examples/html",
     "examples/astro",
     "examples/wordpress",

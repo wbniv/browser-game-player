@@ -265,5 +265,5 @@ import { createAdapter as snes } from './adapters/snes.js';
   window.addEventListener('error', function (e) { if ((loading || started) && e.error) error('The game encountered a problem. Restart to continue.',e.error); });
   window.addEventListener('unhandledrejection', function (e) { if (loading || started) error('The game encountered a problem. Restart to continue.',e.reason); });
   notify('idle');
-  if (config.startMode === 'auto') begin(false);
+  if (displayOnly || config.startMode === 'auto') begin(false);
 })();

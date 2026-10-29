@@ -4,32 +4,11 @@ Add a **Custom HTML** block and paste one of these iframes. Replace `https://exa
 
 ## With touch controls
 
-```html
-<iframe
-  title="Mandelbrot SNES player"
-  src="https://example.org/player/snes/frame.html?game=mandel-display"
-  width="100%"
-  height="760"
-  loading="lazy"
-  allow="fullscreen; autoplay; gamepad"
-  allowfullscreen
-  style="display:block;width:100%;max-width:720px;border:0;background:#29261f"
-></iframe>
-```
+Use [`with-controls.html`](with-controls.html) in a **Custom HTML** block. Prefix the frame path with your site origin, for example `https://example.org`.
 
 ## Bare display, no controls
 
-```html
-<iframe
-  title="Mandelbrot SNES display"
-  src="https://example.org/player/snes/frame.html?game=mandel-display&amp;display=bare"
-  width="180"
-  height="158"
-  loading="lazy"
-  allow="autoplay"
-  style="display:block;width:min(180px,48vw);height:auto;aspect-ratio:8/7;border:0;background:#111820"
-></iframe>
-```
+Use [`bare-display.html`](bare-display.html), replacing the frame path with your same-origin bundle URL.
 
 `display=bare` starts the configured SNES ROM automatically, showing only its canvas. The regular frame includes the shell's Play/loading UI and touchscreen controls.
 
