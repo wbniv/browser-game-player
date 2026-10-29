@@ -1,6 +1,6 @@
 {
   "name": "@wbniv/browser-game-player",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "Shared browser game player with World Foundry and SNES adapters",
   "type": "module",
   "license": "GPL-3.0-only",
@@ -29,6 +29,7 @@
     "docs/user-guide-assets",
     "docs/technical-guide.md",
     "docs/release-0.1.8.md",
+    "docs/release-0.1.9.md",
     "examples/html",
     "examples/astro",
     "examples/wordpress",

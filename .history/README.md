@@ -1,5 +1,6 @@
 | Date | Change |
 |------|--------|
+| [2026-10-29](https://github.com/wbniv/browser-game-player/commit/bfdf670) | Add bare SNES display and integration recipes |
 | [2026-10-11](https://github.com/wbniv/browser-game-player/commit/eb457fd) | Hide the frame scrollbar when the host follows the player's height (0.1.6) |
 | [2026-10-11](https://github.com/wbniv/browser-game-player/commit/a8ed92b) | Release 0.1.5 notes: Play icons and themable frame size |
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/38289ee) | Ship one download with Baseline and Doom Fire examples |
@@ -9,6 +10,10 @@
 | [2026-10-10](https://github.com/wbniv/browser-game-player/commit/0615394) | Extract shared browser game player with World Foundry and SNES adapters |
 
 <!--history-meta v1
+bfdf670	author	Will Norris
+bfdf670	added	6
+bfdf670	deleted	3
+bfdf670	files	1
 eb457fd	author	Will Norris
 eb457fd	added	2
 eb457fd	deleted	2
