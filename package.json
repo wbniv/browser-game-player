@@ -1,6 +1,6 @@
 {
   "name": "@wbniv/browser-game-player",
-  "version": "0.1.11",
+  "version": "0.1.12",
   "description": "Shared browser game player with World Foundry and SNES adapters",
   "type": "module",
   "license": "GPL-3.0-only",
@@ -39,14 +39,15 @@
     "examples/agent-instructions",
     "examples/*.json",
     "examples/README.md",
-    "examples/build-release.py"
+    "examples/build-release.py",
+    "docs/release-0.1.12.md"
   ],
   "scripts": {
     "test": "node --test --test-isolation=none tests/*.test.mjs",
     "check": "node --check shell/player.js && node --check src/embed.mjs"
   },
   "peerDependencies": {
-    "astro": ">=5 <7"
+    "astro": ">=5 <8"
   },
   "peerDependenciesMeta": {
     "astro": {
